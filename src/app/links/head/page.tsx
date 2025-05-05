@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from "react-i18next";
 
 const images = [
   "/images/pho1.jpg",
@@ -10,6 +11,7 @@ const images = [
 
 const Head = () => {
   const [currentImage, setCurrentImage] = useState(0);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -20,7 +22,7 @@ const Head = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-screen overflow-x-hidden">
       {/* الصور المتبدلة */}
       {images.map((img, index) => (
         <div
@@ -40,22 +42,22 @@ const Head = () => {
       <div className="absolute inset-0 bg-black/70 z-10"></div>
 
       {/* المحتوى */}
-      <div className="relative z-20 text-white p-8 flex items-center justify-center h-full flex-col text-center">
+      <div className="relative z-20 text-white p-8 flex items-start max-md:items-center max-md:text-center justify-center h-full flex-col">
         <motion.h1
           className="text-4xl font-bold mb-4"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
-          PROFESSIONAL EXECUTION
+          {t("PROFESSIONAL EXECUTION")}
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 2, ease: "easeOut", delay: 0.5 }}
-          className="max-w-2xl"
+          className="max-w-2xl text-[#a8b3c9]"
         >
-          Professional Execution Company is a leading company in providing innovative furniture solutions and providing all the needs of offices and hotels with high quality throughout the Kingdom of Saudi Arabia. It was founded on the principles of commitment and excellence, and we combine
+        {t("HeadParagraph")}
         </motion.p>
       </div>
     </div>

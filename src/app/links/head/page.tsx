@@ -23,7 +23,7 @@ const Head = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-x-hidden">
+    <div className="relative w-full h-screen overflow-x-hidden overflow-hidden">
       {/* الصور المتبدلة */}
       {images.map((img, index) => (
         <div
@@ -39,7 +39,7 @@ const Head = () => {
             alt={`Background ${index}`}
             layout="fill"
             objectFit="cover"
-            priority={index === 0} // أول صورة تتحمل أولًا
+            priority={index === 0}
           />
         </div>
       ))}
@@ -48,23 +48,33 @@ const Head = () => {
       <div className="absolute inset-0 bg-black/70 z-10"></div>
 
       {/* المحتوى */}
-      <div className="relative z-20 text-white p-8 flex items-start max-md:items-center max-md:text-center justify-center h-full flex-col">
+      <div className="relative z-20 text-white p-8 flex items-start max-md:items-center max-md:text-center justify-center h-full flex-col ml-20">
         <motion.h1
-          className="text-4xl font-bold mb-4"
+          className="text-5xl font-bold mb-4"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.5, ease: "easeOut" }}
         >
           {t("PROFESSIONAL EXECUTION")}
         </motion.h1>
+
         <motion.p
+          className="max-w-2xl text-[#a8b3c9] text-lg mb-6"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 2, ease: "easeOut", delay: 0.5 }}
-          className="max-w-2xl text-[#a8b3c9]"
         >
           {t("HeadParagraph")}
         </motion.p>
+
+        <motion.button
+        className="bg-[#7283a6] hover:bg-transparent border-[#7283a6] border text-white font-semibold py-3 px-10 rounded-full shadow-lg transition duration-300 ease-in-out"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut", delay: 1 }}
+        >
+            {t("Explore Now")}
+        </motion.button>
       </div>
     </div>
   );

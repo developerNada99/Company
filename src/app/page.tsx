@@ -8,6 +8,7 @@ import HttpApi from "i18next-http-backend";
 import cookies from "js-cookie";
 import dynamic from "next/dynamic";
 import Navbar from "@/components/layouts/Navbar";
+import HeadTwo from "@/components/sections/HeadTwo";
 import Head from "./links/head/page";
 
 // i18n setup
@@ -67,6 +68,7 @@ function Home() {
     <>
       <Navbar />
       <Head />
+      <HeadTwo/>
     </>
   );
 }

@@ -5,9 +5,9 @@ import { motion } from 'framer-motion';
 import { useTranslation } from "react-i18next";
 
 const images = [
-  { src: "/images/pho1.jpg", blur: "/images/pho1-blur.jpg" },
-  { src: "/images/pho2.jpg", blur: "/images/pho2-blur.jpg" },
-  { src: "/images/pho3.jpg", blur: "/images/pho3-blur.jpg" }
+  "/images/pho1.jpg",
+  "/images/pho2.jpg",
+  "/images/pho3.jpg"
 ];
 
 const Head = () => {
@@ -24,6 +24,7 @@ const Head = () => {
 
   return (
     <div className="relative w-full h-screen overflow-x-hidden">
+      {/* الصور المتبدلة */}
       {images.map((img, index) => (
         <div
           key={index}
@@ -34,19 +35,19 @@ const Head = () => {
           }`}
         >
           <Image
-            src={img.src}
+            src={img}
             alt={`Background ${index}`}
-            fill
-            style={{ objectFit: 'cover' }}
-            placeholder="blur"
-            blurDataURL={img.blur}
-            priority={index === 0}
+            layout="fill"
+            objectFit="cover"
+            priority={index === 0} // أول صورة تتحمل أولًا
           />
         </div>
       ))}
 
+      {/* طبقة التعتيم */}
       <div className="absolute inset-0 bg-black/70 z-10"></div>
 
+      {/* المحتوى */}
       <div className="relative z-20 text-white p-8 flex items-start max-md:items-center max-md:text-center justify-center h-full flex-col">
         <motion.h1
           className="text-4xl font-bold mb-4"

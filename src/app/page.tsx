@@ -50,7 +50,7 @@ function Home() {
     // Simulate loading delay (e.g. images/fonts)
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // وقت التحميل بالمللي ثانية
+    }, 3000); // وقت التحميل بالمللي ثانية
 
     return () => clearTimeout(timer);
   }, [currentLang]);

@@ -48,7 +48,7 @@ const Head = () => {
       <div className="absolute inset-0 bg-black/70 z-10"></div>
 
       {/* المحتوى */}
-      <div className="relative z-20 text-white p-8 flex items-start max-md:items-center max-md:text-center justify-center h-full flex-col ml-20">
+      <div className="relative z-20 text-white p-8 flex items-start max-md:items-center max-md:text-center justify-center h-full flex-col ml-20 max-lg:ml-0">
         <motion.h1
           className="text-5xl font-bold mb-4"
           initial={{ opacity: 0, x: -50 }}

@@ -33,7 +33,7 @@ const About = () => {
 
     return (
         <div 
-            className="relative min-h-screen flex items-center justify-center px-4 py-16 bg-cover bg-center bg-no-repeat"
+            className="relative min-h-screen flex flex-col items-center justify-center px-4 py-52 bg-cover bg-center bg-no-repeat"
             style={{
                 background: 'linear-gradient(135deg, #121620, #1e2432, #282e3b, #3a4253, #4b566a)',
                 backgroundSize: '100% 100%',
@@ -53,7 +53,7 @@ const About = () => {
                             {t("About")}
                         </motion.h1>
             </motion.div>
-            <About/>
+            <AboutSection/>
         </div>
     );
 };

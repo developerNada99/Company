@@ -1,53 +1,29 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
-import i18n from "i18next";
-import cookies from "js-cookie";
-import { useTranslation } from "react-i18next";
-import dynamic from "next/dynamic";
+import BtnChangLang from "../lang/BtnChangLang";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 function Navbar() {
-  const { t, ready } = useTranslation();
-  const [mounted, setMounted] = useState(false);
-  const [lang, setLang] = useState<"en" | "ar">("en");
+  const t = useTranslations("Navbar");
   const [active, setActive] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
   const [furnitureDropdownOpen, setFurnitureDropdownOpen] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-    const stored = (cookies.get("i18next") as "en" | "ar") || "en";
-    setLang(stored);
-    i18n.changeLanguage(stored); // Changed from i18nInstance to i18n
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-  }, [lang]);
-
-  const toggleLanguage = () => {
-    const newLang: "en" | "ar" = lang === "ar" ? "en" : "ar";
-    i18n.changeLanguage(newLang); // Changed from i18nInstance to i18n
-    cookies.set("i18next", newLang);
-    setLang(newLang);
-  };
-
-  if (!mounted || !ready) return null;
-
   const navItems = [
-    { id: "home", label: t("Home"), path: "/" },
-    { id: "about", label: t("About"), path: "/about" },
+    { id: "home", label: t("home"), path: "/" },
+    { id: "about", label: t("about"), path: "/about" },
     {
-      id: "furniture",
-      label: t("Furniture"),
+      id: "furnitures",
+      label: t("furnitures"),
       subItems: [
         { id: "office-furniture", label: t("Office Furniture"), path: "/office-furniture" },
         { id: "home-furniture", label: t("Home Furniture"), path: "/home-furniture" },
       ],
     },
-    { id: "projects", label: t("Projects"), path: "/projects" },
-    { id: "contact", label: t("Contact Us"), path: "/contact" },
+    { id: "projects", label: t("projects"), path: "/projects" },
+    { id: "contact", label: t("contact"), path: "/contact" },
   ];
 
   const toggleFurnitureDropdown = () => setFurnitureDropdownOpen(!furnitureDropdownOpen);
@@ -61,9 +37,9 @@ function Navbar() {
       <div className="absolute inset-0 bg-white/5 backdrop-blur-lg -z-30" />
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between md:flex-row">
         {/* Logo */}
-        <div className="text-xl text-white flex-1/4">
-          {t("PROFESSIONAL")}
-          <span className="text-[#a8b3c9]">{t("EXECUTION")}</span>
+        <div className="text-2xl font-bold text-white flex-1/4">
+          {t("Royal")}
+          <span className="text-[#a8b3c9]">{t("Comfort")}</span>
         </div>
 
         {/* Mobile Menu Button */}
@@ -81,11 +57,17 @@ function Navbar() {
                 <>
                   <button
                     onClick={toggleFurnitureDropdown}
-                    className={`text-xl transition hover:text-[#a8b3c9] ${
-                      active.startsWith("furniture") ? "text-[#a8b3c9]" : "text-white"
+                    className={`text-xl transition hover:text-[#a8b3c9] flex items-center gap-1 ${
+                      active.startsWith("furnitures") ? "text-[#a8b3c9]" : "text-white"
                     }`}
                   >
                     {item.label}
+                    <ChevronDown 
+                      size={18} 
+                      className={`transition-transform mt-1 ${
+                        furnitureDropdownOpen ? "rotate-180" : ""
+                      }`}
+                    />
                   </button>
 
                   {furnitureDropdownOpen && (
@@ -128,12 +110,7 @@ function Navbar() {
 
           {/* Language Toggle */}
           <li>
-            <button
-              onClick={toggleLanguage}
-              className="text-white border border-white px-3 py-1 rounded-md text-sm"
-            >
-              {lang === "ar" ? "English" : "عربى"}
-            </button>
+            <BtnChangLang />
           </li>
         </ul>
       </div>
@@ -147,11 +124,17 @@ function Navbar() {
                 <>
                   <button
                     onClick={toggleFurnitureDropdown}
-                    className={`text-xl ${
-                      active.startsWith("furniture") ? "text-[#a8b3c9]" : "text-white"
+                    className={`text-xl flex items-center gap-1 ${
+                      active.startsWith("furnitures") ? "text-[#a8b3c9]" : "text-white"
                     }`}
                   >
                     {item.label}
+                    <ChevronDown 
+                      size={18} 
+                      className={`transition-transform ${
+                        furnitureDropdownOpen ? "rotate-180" : ""
+                      }`}
+                    />
                   </button>
 
                   {furnitureDropdownOpen && (
@@ -194,12 +177,7 @@ function Navbar() {
 
           {/* Mobile Language Toggle */}
           <li className="flex justify-center">
-            <button
-              onClick={toggleLanguage}
-              className="text-white border border-white px-3 py-1 rounded-md text-sm"
-            >
-              {lang === "ar" ? "English" : "عربى"}
-            </button>
+            <BtnChangLang />
           </li>
         </ul>
       )}
@@ -207,4 +185,4 @@ function Navbar() {
   );
 }
 
-export default dynamic(() => Promise.resolve(Navbar), { ssr: false });
+export default Navbar;

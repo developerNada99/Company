@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+
+/* إعدادات إضافية للغة العربية */
+html[lang="ar"] {
+  direction: rtl;
+}
 /* Scrollbar style */
 ::-webkit-scrollbar {
   width: 8px; /* رفيع */

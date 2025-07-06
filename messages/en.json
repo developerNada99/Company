@@ -65,5 +65,20 @@
       "about":"About",
       "about description":"Royal Comfort Company is a leading manufacturer of premium office and hotel furniture, based in Riyadh. We combine innovative design with world-class craftsmanship to deliver tailored solutions that elevate workspaces and hospitality environments. Our commitment to sustainability drives us to use eco-friendly materials and responsible manufacturing practices, ensuring durable, high-quality products. With a client-centric approach, cutting-edge technology, and meticulous attention to detail, we transform visions into reality—from custom designs to large-scale project execution. Trust our expert team to provide exceptional service, from consultation to after-sales support.",
       "Explore Now":"Explore Now"
+    },
+    "ContactPage":{
+      "contact":"Contact",
+      "ParaContact":"Have questions ? Reach out to our team and we'll get back to you promptly.",
+      "Follow Us":"Follow Us",
+      "message":"Thank you! Your message has been sent successfully.",
+      "Full Name":"Full Name",
+      "Email":"Email",
+      "Your Message":"Your Message",
+      "Our Information":"Our Information",
+      "Address":"Address",
+      "Phone":"Phone",
+      "Send Message":"Send Message",
+      "Sending":"sending..."
+
     }
   }

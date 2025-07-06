@@ -3,9 +3,12 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
+import { useTranslations } from "next-intl";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaMapMarkerAlt, FaPhone, FaEnvelope } from 'react-icons/fa';
 
 const Contact: React.FC = () => {
+    const t = useTranslations("ContactPage");
+    
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -105,9 +108,9 @@ const Contact: React.FC = () => {
           className="text-center mb-16 mt-20"
           variants={itemVariants}
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Contact Us</h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Have questions about our office furniture? Reach out to our team and we'll get back to you promptly.
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">{t("contact")}</h1>
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                    {t("ParaContact")}
           </p>
         </motion.div>
 
@@ -123,12 +126,12 @@ const Contact: React.FC = () => {
             >
               {submitSuccess && (
                 <div className="mb-6 p-4 bg-green-600 rounded-lg">
-                  Thank you! Your message has been sent successfully.
+                  {t("message")}
                 </div>
               )}
 
               <div className="mb-6">
-                <label htmlFor="name" className="block mb-2 text-lg">Full Name</label>
+                <label htmlFor="name" className="block mb-2 text-lg">{t("Full Name")}</label>
                 <input
                   type="text"
                   id="name"
@@ -141,7 +144,7 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="mb-6">
-                <label htmlFor="email" className="block mb-2 text-lg">Email Address</label>
+                <label htmlFor="email" className="block mb-2 text-lg">{t("Email")}</label>
                 <input
                   type="email"
                   id="email"
@@ -154,7 +157,7 @@ const Contact: React.FC = () => {
               </div>
 
               <div className="mb-8">
-                <label htmlFor="message" className="block mb-2 text-lg">Your Message</label>
+                <label htmlFor="message" className="block mb-2 text-lg">{t("Your Message")}</label>
                 <textarea
                   id="message"
                   name="message"
@@ -171,7 +174,7 @@ const Contact: React.FC = () => {
                 disabled={isSubmitting}
                 className="bg-[#7283a6] w-full hover:bg-transparent border-[#7283a6] border py-3 px-10 rounded-full font-semibold transition duration-300 mb-12"
                 >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {isSubmitting ? t("Sending") : t("Send Message")}
               </button>
             </form>
           </motion.div>
@@ -182,7 +185,7 @@ const Contact: React.FC = () => {
             variants={itemVariants}
           >
             <div className="bg-gray-800 bg-opacity-50 backdrop-blur-sm rounded-xl p-8 h-full shadow-2xl">
-              <h2 className="text-2xl font-bold mb-8">Our Information</h2>
+              <h2 className="text-2xl font-bold mb-8">{t("Our Information")}</h2>
               
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
@@ -190,7 +193,7 @@ const Contact: React.FC = () => {
                     <FaMapMarkerAlt size={24} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-1">Address</h3>
+                    <h3 className="text-xl font-semibold mb-1">{t("Address")}</h3>
                     <p className="text-gray-300">123 Office Street, Furniture District<br />New York, NY 10001</p>
                   </div>
                 </div>
@@ -200,7 +203,7 @@ const Contact: React.FC = () => {
                     <FaPhone size={24} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-1">Phone</h3>
+                    <h3 className="text-xl font-semibold mb-1">{t("Phone")}</h3>
                     <p className="text-gray-300">+1 (555) 123-4567<br />Mon-Fri: 9am-5pm EST</p>
                   </div>
                 </div>
@@ -210,14 +213,14 @@ const Contact: React.FC = () => {
                     <FaEnvelope size={24} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold mb-1">Email</h3>
+                    <h3 className="text-xl font-semibold mb-1">{t("Email")}</h3>
                     <p className="text-gray-300">info@officefurniture.com<br />support@officefurniture.com</p>
                   </div>
                 </div>
               </div>
 
               <div className="mt-12">
-                <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
+                <h3 className="text-xl font-semibold mb-4">{t("Follow Us")}</h3>
                 <div className="flex gap-4">
                   {socialMedia.map((social) => (
                     <a 

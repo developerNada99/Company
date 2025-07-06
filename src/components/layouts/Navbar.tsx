@@ -22,7 +22,6 @@ function Navbar() {
         { id: "home-furniture", label: t("Home Furniture"), path: "/home-furniture" },
       ],
     },
-    { id: "projects", label: t("projects"), path: "/projects" },
     { id: "contact", label: t("contact"), path: "/contact" },
   ];
 

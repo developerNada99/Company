@@ -32,7 +32,7 @@ function Head() {
 
   return (
     <section className="relative w-full h-screen overflow-hidden" id="home-section">
-      {/* خلفية متغيرة */}
+      {/* Background Images */}
       <div className="absolute inset-0 bg-black z-0">
         {images.map((img, index) => (
           <div
@@ -46,47 +46,50 @@ function Head() {
               alt={`Background ${index}`}
               fill
               priority={index === 0}
-              className="object-cover"
-              sizes="100vw"
+              className="object-cover object-center"
+              quality={100}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
             />
           </div>
         ))}
       </div>
 
-      {/* تعتيم */}
+      {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/70 z-10" />
 
-      {/* المحتوى */}
-      <div className="relative z-20 px-28 text-white p-8 flex flex-col justify-center h-full max-md:items-center max-md:text-center">
-        <motion.h1
-          className="text-5xl font-medium mb-4"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
-        >
-          {t("title")}
-        </motion.h1>
+      {/* Content */}
+      <div className="relative z-20 h-full flex flex-col justify-center px-8 sm:px-12 md:px-16 lg:px-28 xl:px-32 text-white max-md:items-center max-md:text-center">
+        <motion.div className="w-full max-w-7xl mx-auto p-4 sm:p-6 md:p-8">
+          <motion.h1
+            className="text-4xl sm:text-5xl font-medium mb-4"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
+          >
+            {t("title")}
+          </motion.h1>
 
-        <motion.p
-          className="max-w-2xl text-[#a8b3c9] text-lg mb-6"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 2, ease: "easeOut", delay: 0.5 }}
-        >
-          {t("HeadParagraph")}
-        </motion.p>
+          <motion.p
+            className="max-w-2xl text-[#a8b3c9] text-base sm:text-lg mb-6"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 2, ease: "easeOut", delay: 0.5 }}
+          >
+            {t("HeadParagraph")}
+          </motion.p>
 
-        <motion.button
-          className="bg-[#7283a6] w-fit hover:bg-transparent border-[#7283a6] border py-3 px-10 rounded-full font-semibold transition duration-300 mb-12"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut", delay: 1 }}
-        >
-          {t("Explore Now")}
-        </motion.button>
+          <motion.button
+            className="bg-[#7283a6] w-full sm:w-fit hover:bg-transparent border-[#7283a6] border py-3 px-6 sm:px-10 rounded-full font-semibold transition duration-300 mb-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut", delay: 1 }}
+          >
+            {t("Explore Now")}
+          </motion.button>
+        </motion.div>
       </div>
 
-      {/* سهم التمرير لأسفل - معدل */}
+      {/* Scroll Down Arrow */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 cursor-pointer"
         initial={{ opacity: 0, y: -20 }}

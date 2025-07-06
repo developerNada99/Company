@@ -12,11 +12,11 @@ function Chair() {
 
 
   const tableImages = [
-    "/images/Chair1.jpg",
-    "/images/Chair2.jpg",
-    "/images/Chair3.jpg",
-    "/images/Chair4.jpg",
-    "/images/Chair5.jpg",
+    "/images/meeting-table1.jpg",
+    "/images/meeting-table2.jpg",
+    "/images/meeting-table3.jpg",
+    "/images/meeting-table4.jpg",
+    "/images/meeting-table5.jpg",
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

@@ -35,7 +35,7 @@ function Head() {
   return (
     <ParallaxProvider>
       <section
-        className="relative w-full h-screen overflow-hidden"
+        className="relative w-full h-screen overflow-hidden bg-gray-900"
         id="home-section"
       >
         {/* Background Images with Parallax */}

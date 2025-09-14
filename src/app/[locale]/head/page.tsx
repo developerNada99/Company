@@ -86,18 +86,16 @@ function Head() {
               {t("HeadParagraph")}
             </motion.p>
 
-            <motion.button
-              className="bg-[#7283a6] w-full sm:w-fit cursor-pointer hover:bg-transparent border-[#7283a6] border py-3 px-6 sm:px-10 rounded-full font-semibold transition duration-300 mb-12"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.5, ease: "easeOut", delay: 1 }}
-            >
-              {t("Explore Now")}
-            </motion.button>
-          </motion.div>
-        </div>
-
-        <div className="absolute bottom-0 left-0 w-full h-[400px] bg-gradient-to-t from-[#f8f8f8] to-transparent -z-10" />
+          <motion.button
+            className="bg-[#7283a6] w-full sm:w-fit hover:bg-transparent border-[#7283a6] border py-3 px-6 sm:px-10 rounded-full font-semibold transition duration-300 mb-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5, ease: "easeOut", delay: 1 }}
+          >
+            {t("Explore Now")}
+          </motion.button>
+        </motion.div>
+      </div>
 
         {/* Scroll Down Arrow */}
         <motion.div

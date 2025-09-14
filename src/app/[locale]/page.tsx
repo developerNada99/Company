@@ -8,7 +8,6 @@ function Home() {
 
       <Head />
       <Service />
-      <Ready />
     </>
   );
 }

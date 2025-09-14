@@ -1,7 +1,7 @@
 {
     "HeadPage": {
-      "title": "Furniture.. that tells stories.",
-      "HeadParagraph":"Royal Comfort Company is a leading provider of innovative furniture solutions, catering to all office and hotel needs with high quality throughout the Kingdom of Saudi Arabia. Founded on the principles of commitment and excellence, we combine functionality, comfort, and elegance to create environments that enhance productivity and customer satisfaction.",
+      "title": "Designed for you. Styled to impress.",
+      "HeadParagraph":"Professional Execution Company is a leading provider of innovative furniture solutions, catering to all office and hotel needs with high quality throughout the Kingdom of Saudi Arabia. Founded on the principles of commitment and excellence, we combine functionality, comfort, and elegance to create environments that enhance productivity and customer satisfaction.",
       "Explore Now":"Explore Now"
     },
     "Navbar": {
@@ -10,17 +10,23 @@
     "contact": "Contact",
     "projects": "Projects",
     "furnitures": "Furnitures",
-    "Royal": "Royal",
-    "Comfort": "Comfort",
+    "Royal": "Professional ",
+    "Comfort": "Execution",
     "Office Furniture":"Office Furniture",
     "Home Furniture":"Home Furniture"
   },
   "Service": {
-      "title": "A Broad Set Of Interior Design Services.",
-      "one":"Space planning",
-      "two":"Furniture selection",
-      "three":"Decoration & colour design",
-      "four":"Accesories & art selection"
+      "title": "Designs where utility meets style in every detail",
+      "Ergonomic Desk Chair":"Ergonomic Desk Chair",
+      "Designed for comfort and productivity":"Designed for comfort and productivity",
+      "Modern Meeting Table":"Modern Meeting Table",
+      "Perfect for collaboration and style":"Perfect for collaboration and style",
+      "Living & Dining Set":"Living & Dining Set",
+      "A blend of elegance and practicality":"A blend of elegance and practicality",
+      "Cozy Minimalist Bed":"Cozy Minimalist Bed",
+      "Simplicity that ensures restful sleep":"Simplicity that ensures restful sleep",
+      "description":"We craft furniture with high quality, offering lasting comfort, adding a touch of elegance, made with durable materials that reflect luxury, featuring modern designs that match your taste, with fine details that make the difference, innovation that keeps up with every trend, artistic touches that enhance your space, assurance that brings peace of mind, and furniture that makes every corner of your home come alive.",
+      "btn":"Contact Us"
     },
   "Ready": {
       "title": "Ready to create an unique space design?",
@@ -63,7 +69,7 @@
     },
     "SectionAbout": {
       "about":"About",
-      "about description":"Royal Comfort Company is a leading manufacturer of premium office and hotel furniture, based in Riyadh. We combine innovative design with world-class craftsmanship to deliver tailored solutions that elevate workspaces and hospitality environments. Our commitment to sustainability drives us to use eco-friendly materials and responsible manufacturing practices, ensuring durable, high-quality products. With a client-centric approach, cutting-edge technology, and meticulous attention to detail, we transform visions into reality—from custom designs to large-scale project execution. Trust our expert team to provide exceptional service, from consultation to after-sales support.",
+      "about description":"Professional Execution Company is a leading manufacturer of premium office and hotel furniture, based in Riyadh. We combine innovative design with world-class craftsmanship to deliver tailored solutions that elevate workspaces and hospitality environments. Our commitment to sustainability drives us to use eco-friendly materials and responsible manufacturing practices, ensuring durable, high-quality products. With a client-centric approach, cutting-edge technology, and meticulous attention to detail, we transform visions into reality—from custom designs to large-scale project execution. Trust our expert team to provide exceptional service, from consultation to after-sales support.",
       "Explore Now":"Explore Now"
     },
     "ContactPage":{

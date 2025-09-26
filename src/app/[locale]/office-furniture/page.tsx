@@ -1,23 +1,22 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Tables from "@/components/sections/TablesMeeting";
 import DeskChair from "@/components/sections/DeskChair";
 import Chairs from "@/components/sections/Chairs";
 import { useTranslations } from "next-intl";
 
+const OfficeFurnitureComp: React.FC = () => {
+  const t = useTranslations("Office");
 
-function OfficeFurnitureComp() {
-    const t = useTranslations("Office");
-  
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => setMounted(true), []);
 
   if (!mounted) return null;
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -25,7 +24,7 @@ function OfficeFurnitureComp() {
     },
   };
 
-  const item = {
+  const item: Variants = {
     hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
@@ -36,7 +35,6 @@ function OfficeFurnitureComp() {
 
   return (
     <div className="bg-gray-900 text-white">
-    
       {/* Content */}
       <div className="container mx-auto px-4 pt-32">
         {/* Hero Section */}
@@ -72,6 +70,6 @@ function OfficeFurnitureComp() {
       </div>
     </div>
   );
-}
+};
 
 export default OfficeFurnitureComp;

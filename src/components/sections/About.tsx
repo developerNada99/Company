@@ -1,17 +1,15 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useTranslations } from "next-intl";
 
-function AboutSection() {
-  // 1. جميع استدعاءات الـ Hooks في الأعلى (يجب أن تكون بنفس الترتيب في كل render)
+const AboutSection: React.FC = () => {
   const t = useTranslations("SectionAbout");
-  const [mounted, setMounted] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [mounted, setMounted] = useState<boolean>(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
 
-  // صور السلايدر (ليست hook فلا مشكلة في وضعها هنا)
-  const images = [
+  const images: string[] = [
     "/images/pho1.jpg",
     "/images/about1.jpg",
     "/images/pho2.jpg",
@@ -20,25 +18,20 @@ function AboutSection() {
     "/images/about3.jpg",
   ];
 
-  // 2. useEffect واحد يجمع العمليات
   useEffect(() => {
-    setMounted(true); // تأكيد أن المكون قد تم تركيبه
-    
+    setMounted(true);
+
     const id = setInterval(
       () => setCurrentImageIndex((i) => (i + 1) % images.length),
       8000
     );
-    
-    return () => {
-      clearInterval(id); // تنظيف عند إلغاء التركيب
-    };
+
+    return () => clearInterval(id);
   }, [images.length]);
 
-  // 3. التحقق من mounted بعد جميع استدعاءات الـ Hooks
   if (!mounted) return null;
 
-  // متغيرات الحركة (ليست hooks)
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -46,7 +39,7 @@ function AboutSection() {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,
@@ -55,16 +48,14 @@ function AboutSection() {
     },
   };
 
-  const imageVariants = {
+  const imageVariants: Variants = {
     enter: { opacity: 0, transition: { duration: 2, ease: "easeInOut" } },
     center: { opacity: 1, transition: { duration: 2, ease: "easeInOut" } },
     exit: { opacity: 0, transition: { duration: 2, ease: "easeInOut" } },
   };
 
   return (
-    <div
-      className="relative min-h-screen flex items-center justify-center px-4 py-16 mt-9 bg-gray-900"
-    >
+    <div className="relative min-h-screen flex items-center justify-center px-4 py-16 mt-9 bg-gray-900">
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center gap-8 md:gap-12">
         {/* النص */}
         <motion.div
@@ -132,6 +123,6 @@ function AboutSection() {
       </div>
     </div>
   );
-}
+};
 
 export default AboutSection;

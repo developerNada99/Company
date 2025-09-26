@@ -1,23 +1,22 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import Beds from '@/components/sections/Beds'
-import Wardrobe from '@/components/sections/Wardrobe'
-import LivingDiningRoom from '@/components/sections/LivingDiningRoom'
+import { motion, Variants } from "framer-motion";
+import Beds from "@/components/sections/Beds";
+import Wardrobe from "@/components/sections/Wardrobe";
+import LivingDiningRoom from "@/components/sections/LivingDiningRoom";
 import { useTranslations } from "next-intl";
 
+const HomesFurniture: React.FC = () => {
+  const t = useTranslations("Home");
 
-function HomesFurniture() {
-    const t = useTranslations("Home");
-  
-  const [mounted, setMounted] = useState(false);
+  const [mounted, setMounted] = useState<boolean>(false);
 
   useEffect(() => setMounted(true), []);
 
   if (!mounted) return null;
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -25,7 +24,7 @@ function HomesFurniture() {
     },
   };
 
-  const item = {
+  const item: Variants = {
     hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
@@ -36,7 +35,6 @@ function HomesFurniture() {
 
   return (
     <div className="bg-gray-900 text-white">
-    
       {/* Content */}
       <div className="container mx-auto px-4 pt-32">
         {/* Hero Section */}
@@ -51,7 +49,7 @@ function HomesFurniture() {
               className="text-4xl md:text-6xl font-bold mb-6"
               variants={item}
             >
-                {t("home furniture")}
+              {t("home furniture")}
             </motion.h1>
 
             <motion.p
@@ -65,13 +63,13 @@ function HomesFurniture() {
 
         {/* Sections */}
         <div className="space-y-32 pb-20">
-              <Beds />
-              <Wardrobe />
-              <LivingDiningRoom />
+          <Beds />
+          <Wardrobe />
+          <LivingDiningRoom />
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default HomesFurniture;

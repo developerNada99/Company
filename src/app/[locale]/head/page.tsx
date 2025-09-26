@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
 import { ChevronDown } from "lucide-react";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
-import Service from "@/components/sections/Service";
 
 const images = ["/images/pho1.jpg", "/images/pho2.jpg", "/images/pho3.jpg"];
 

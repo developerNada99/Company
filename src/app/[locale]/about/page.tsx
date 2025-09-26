@@ -1,21 +1,21 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import AboutSection from "@/components/sections/About";
 import { useTranslations } from "next-intl";
 
-
 function About() {
-    const t = useTranslations("SectionAbout");
-  
+  const t = useTranslations("SectionAbout");
+
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => setMounted(true), []);
 
   if (!mounted) return null;
 
-  const container = {
+  // container variants
+  const container: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -23,18 +23,18 @@ function About() {
     },
   };
 
-  const item = {
+  // item variants
+  const item: Variants = {
     hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      transition: { type: "spring", damping: 10, stiffness: 100, duration: 0.8 },
+      transition: { type: "spring", damping: 10, stiffness: 100 },
     },
   };
 
   return (
     <div className="bg-gray-900 text-white">
-    
       {/* Content */}
       <div className="container mx-auto px-4 pt-32">
         {/* Hero Section */}
@@ -56,7 +56,7 @@ function About() {
 
         {/* Sections */}
         <div className="space-y-32 pb-20">
-          <AboutSection/>
+          <AboutSection />
         </div>
       </div>
     </div>
